@@ -59,6 +59,33 @@
     .text-mask-vertical {
       mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
     }
+
+    @media print {
+      nav, footer, #contact, button, .no-print {
+        display: none !important;
+      }
+      body {
+        background: white !important;
+        color: black !important;
+      }
+      .bg-slate-50, .fixed {
+        display: none !important;
+      }
+      .max-w-7xl {
+        max-width: none !important;
+        padding: 0 !important;
+      }
+      .bg-white {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+      section {
+        page-break-inside: avoid;
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+      }
+    }
   </style>
 </head>
 
@@ -87,10 +114,10 @@
         </ul>
 
         <div class="flex items-center gap-4">
-          <a href="#contact"
+          <button onclick="window.print()"
             class="hidden sm:flex bg-blue-600 px-5 py-2 rounded-xl font-semibold text-sm text-white hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20">
-            Contactez-moi
-          </a>
+            Télécharger CV (PDF)
+            </button>
 
           <!-- Mobile Menu Toggle -->
           <button id="menu-toggle" class="md:hidden text-slate-900 text-3xl focus:outline-none">
@@ -158,10 +185,10 @@
               Réserver pour Stage 2026 <i
                 class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
             </a>
-            <a href="#contact"
+            <button onclick="window.print()"
               class="bg-white border border-slate-200 px-8 py-5 rounded-2xl font-bold text-slate-900 hover:bg-slate-50 transition-all shadow-sm flex items-center gap-2">
-              <i class="ph-bold ph-paper-plane-tilt text-xl text-blue-600"></i> Me Contacter
-            </a>
+              <i class="ph-bold ph-printer text-xl text-blue-600"></i> Télécharger CV (PDF)
+              </button>
           </div>
 
           <div class="mt-16">
@@ -502,10 +529,8 @@
             <div class="flex gap-6 text-2xl text-slate-400">
               <a href="#" class="hover:text-blue-600 hover:-translate-y-1.5 transition-all duration-300"><i
                   class="ph-bold ph-linkedin-logo"></i></a>
-              <a href="#" class="hover:text-slate-900 hover:-translate-y-1.5 transition-all duration-300"><i
-                  class="ph-bold ph-github-logo"></i></a>
-              <a href="#" class="hover:text-blue-400 hover:-translate-y-1.5 transition-all duration-300"><i
-                  class="ph-bold ph-twitter-logo"></i></a>
+              <a href="tel:+243998439596" class="hover:text-blue-400 hover:-translate-y-1.5 transition-all duration-300"><i
+                  class="ph-bold ph-phone-ringing"></i></a>
               <a href="mailto:mukasakevintheo@gmail.com"
                 class="hover:text-red-500 hover:-translate-y-1.5 transition-all duration-300"><i
                   class="ph-bold ph-envelope"></i></a>
